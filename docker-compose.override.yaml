@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+    # Dev settings
+    awful-auth:
+        ports:
+            - 8001:80
+    goon-files:
+        ports:
+            - 8002:80
+    mongo:
+        ports:
+          - 27017:27017
+
+    # Various debug containers
+    redis-commander:
+        image: rediscommander/redis-commander
+        restart: unless-stopped
+        depends_on:
+            - redis
+        environment: 
+            REDIS_HOSTS: local:redis:6379
+        ports:
+            - 8082:8081
+
+    mongo-express:
+        image: mongo-express
+        restart: unless-stopped
+        depends_on:
+            - mongo
+        ports:
+            - 8081:8081
+        environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USER}
+            ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD}

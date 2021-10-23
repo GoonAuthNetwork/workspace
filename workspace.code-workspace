@@ -1,0 +1,24 @@
+{
+        "folders": [
+                {
+                        "name": "Workspace",
+                        "path": "../workspace"
+                },
+                {
+                        "name": "Awful Auth",
+                        "path": "../awful-auth"
+                },
+                {
+                        "name": "Goon Files",
+                        "path": "../goon-files"
+                },
+                {
+                        "name": "Discord Auth",
+                        "path": "../discord-auth"
+                }
+        ],
+        "settings": {
+                "python.languageServer": "Pylance",
+        }
+}
+
