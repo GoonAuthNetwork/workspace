@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    # Production settings, change the user to something limited!
+    awful-auth:
+        user: ${CONTAINER_USER:-root}
+    goon-files:
+        user: ${CONTAINER_USER:-root}
+    discord-auth:
+        user: ${CONTAINER_USER:-root}
+    
+    #TODO: Add nginx/traefik reverse proxy
